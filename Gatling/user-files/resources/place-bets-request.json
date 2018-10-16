@@ -1,0 +1,26 @@
+{
+    "oddstyle": "decimal",
+    "locale": 1235,
+    "selections": [
+        {
+            "id": "0ML30409118_1",
+            "trueodds" : 1.21,
+            "displayOdds": "1.21"
+        }
+    ],
+    "bets": [
+        {
+            "type": "Single",
+            "selectionsMapped": [
+                {
+                    "id": "0ML30409118_1"
+                }
+            ],
+            "stake": 1,
+            "trueOdds": 1.21,
+            "displayOdds": "1.21",
+            "potentialReturns": 1.21
+           
+        }
+    ]
+}
