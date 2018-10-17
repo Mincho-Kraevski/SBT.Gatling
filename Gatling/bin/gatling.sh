@@ -20,6 +20,10 @@ else
     JAVA=java
 fi
 
+export JAVA_OPTS="-Dscenario=\"Calculate and place bets\" -DrequestRatio=\"1:1\" -DconcurrentUsers=100 -Dduration=\"30 seconds\""
+
+echo "JAVA_OPTS is set to ${JAVA_OPTS}"
+
 OLDDIR=`pwd`
 BIN_DIR=`dirname $0`
 cd "${BIN_DIR}/.." && DEFAULT_GATLING_HOME=`pwd` && cd "${OLDDIR}"
@@ -32,24 +36,40 @@ export GATLING_HOME GATLING_CONF
 echo "GATLING_HOME is set to ${GATLING_HOME}"
 
 DEFAULT_JAVA_OPTS="-server"
+echo "DEFAULT_JAVA_OPTS is updated to ${DEFAULT_JAVA_OPTS}"
 DEFAULT_JAVA_OPTS="${DEFAULT_JAVA_OPTS} -Xmx1G"
+echo "DEFAULT_JAVA_OPTS is updated to ${DEFAULT_JAVA_OPTS}"
 DEFAULT_JAVA_OPTS="${DEFAULT_JAVA_OPTS} -XX:+UseG1GC -XX:MaxGCPauseMillis=30 -XX:G1HeapRegionSize=16m -XX:InitiatingHeapOccupancyPercent=75 -XX:+ParallelRefProcEnabled"
+echo "DEFAULT_JAVA_OPTS is updated to ${DEFAULT_JAVA_OPTS}"
 DEFAULT_JAVA_OPTS="${DEFAULT_JAVA_OPTS} -XX:+PerfDisableSharedMem -XX:+AggressiveOpts -XX:+OptimizeStringConcat"
+echo "DEFAULT_JAVA_OPTS is updated to ${DEFAULT_JAVA_OPTS}"
 DEFAULT_JAVA_OPTS="${DEFAULT_JAVA_OPTS} -XX:+HeapDumpOnOutOfMemoryError"
+echo "DEFAULT_JAVA_OPTS is updated to ${DEFAULT_JAVA_OPTS}"
 DEFAULT_JAVA_OPTS="${DEFAULT_JAVA_OPTS} -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv6Addresses=false"
+echo "DEFAULT_JAVA_OPTS is updated to ${DEFAULT_JAVA_OPTS}"
 COMPILER_OPTS="-Xss100M $DEFAULT_JAVA_OPTS $JAVA_OPTS"
+echo "COMPILER_OPTS is set to ${COMPILER_OPTS}"
 
 # Setup classpaths
 COMPILER_CLASSPATH="$GATLING_HOME/lib/*:$GATLING_CONF:"
+echo "COMPILER_CLASSPATH is set to ${COMPILER_CLASSPATH}"
+
 GATLING_CLASSPATH="$GATLING_HOME/lib/*:$GATLING_HOME/user-files:$GATLING_CONF:"
+echo "GATLING_CLASSPATH is updated to ${GATLING_CLASSPATH}"
 
 
 # Use the extra compiler options flag only if they are provided
 if [ -n "$EXTRA_SCALAC_OPTIONS" ]; then
     EXTRA_COMPILER_OPTIONS="-eso $EXTRA_SCALAC_OPTIONS"
+	echo "EXTRA_COMPILER_OPTIONS is set to ${EXTRA_COMPILER_OPTIONS}"
 fi
 
 # Run the compiler
+echo "Run the compiler started."
 "$JAVA" $COMPILER_OPTS -cp "$COMPILER_CLASSPATH" io.gatling.compiler.ZincCompiler $EXTRA_COMPILER_OPTIONS "$@" 2> /dev/null
+echo "Run the compiler finished."
+
 # Run Gatling
+echo "Run Gatling started."
 "$JAVA" $DEFAULT_JAVA_OPTS $JAVA_OPTS -cp "$GATLING_CLASSPATH" io.gatling.app.Gatling "$@"
+echo "Run Gatling finished."
