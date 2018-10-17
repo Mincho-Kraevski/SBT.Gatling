@@ -20,7 +20,8 @@ else
     JAVA=java
 fi
 
-export JAVA_OPTS="-Dscenario=0 -DrequestRatio=1 -DconcurrentUsers=100 -Dduration=1"
+#export JAVA_OPTS="-Dscenario=0 -DrequestRatio=1 -DconcurrentUsers=100 -Dduration=1"
+export JAVA_OPTS="-Dscenario=$5 -DrequestRatio=$6 -DconcurrentUsers=$7 -Dduration=$8"
 
 echo "JAVA_OPTS is set to ${JAVA_OPTS}"
 
