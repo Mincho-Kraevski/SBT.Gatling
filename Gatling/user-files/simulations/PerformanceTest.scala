@@ -61,7 +61,11 @@ class PerformanceTest extends Simulation {
 
   /* Environment Variables (JAVA_OPTS) */
   /* Scenario Mode */
-  val scenarioMode: String = int.tryParse(System.getProperty("scenario"), 0) // -Dscenario
+  val a: String = System.getProperty("scenario")
+  print("well..")
+  print(a)
+
+  val scenarioMode: Int = int.tryParse(System.getProperty("scenario"), 0) // -Dscenario
 
   /* Calculate Bets Ratio */
   val requestRatio: String = System.getProperty("requestRatio") // -DrequestRatio
