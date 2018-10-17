@@ -77,8 +77,8 @@ class PerformanceTest extends Simulation {
 
   /* Simulation Duration */
   val durationStr: String = System.getProperty("duration") // -Dduration
-  val durationInt = int.tryParse(durationStr, 1)
-  val overallDuration: FiniteDuration = Duration.apply("${durationInt} minutes").asInstanceOf[FiniteDuration]
+  val durationInt: Int = int.tryParse(durationStr, 1)
+  val overallDuration: FiniteDuration = Duration.apply(durationStr + " minutes").asInstanceOf[FiniteDuration]
   val rampPeriod: FiniteDuration = simulationDuration.getRampPeriod(overallDuration, rampRatio).asInstanceOf[FiniteDuration]
   val simulationPeriod: FiniteDuration = overallDuration - rampPeriod
 
@@ -91,21 +91,21 @@ class PerformanceTest extends Simulation {
   var scn: ScenarioBuilder = scenario("default")
 
   scenarioMode match {
-    case "Calculate bets" => scn = scenario(1)
+    case 1 => scn = scenario("CalculateBets")
       .exec(
         feed(requestHeadersFeeder)
           .repeat(calculateBetsRatio) {
             CalculateBets.calculateBets
           })
 
-    case "Place bets" => scn = scenario(2)
+    case 2 => scn = scenario("PlaceBets")
       .exec(
         feed(requestHeadersFeeder)
           .repeat(placeBetsRatio) {
             PlaceBets.placeBets
           })
 
-    case "Calculate and place bets" | _ => scn = scenario(0)
+    case 0 | _ => scn = scenario("CalculateAndPlaceBets")
       .exec(feed(requestHeadersFeeder)
         .repeat(calculateBetsRatio) {
           CalculateBets.calculateBets

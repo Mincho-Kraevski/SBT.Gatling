@@ -3,3 +3,7 @@
 
 *.xml
 *.iml
+*.dass
+*.zip
+**/Gatling/target/test-classes/*.dass
+**/Gatling/target/*.zip
