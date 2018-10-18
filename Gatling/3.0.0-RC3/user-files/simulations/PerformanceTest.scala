@@ -61,24 +61,20 @@ class PerformanceTest extends Simulation {
 
   /* Environment Variables (JAVA_OPTS) */
   /* Scenario Mode */
-  val a: String = System.getProperty("scenario")
-  print("well..")
-  print(a)
-
-  val scenarioMode: Int = int.tryParse(System.getProperty("scenario"), 0) // -Dscenario
+  val scenarioMode: String = System.getProperty("scenario") // -Dscenario
 
   /* Calculate Bets Ratio */
   val requestRatio: String = System.getProperty("requestRatio") // -DrequestRatio
-  var calculateBetsRatio: Int = int.tryParse(requestRatio, 1)
-  var placeBetsRatio: Int = 1
+  val ratio: Array[java.lang.String] = requestRatio.split(":").map(_.trim)
+  var calculateBetsRatio: Int = int.tryParse(ratio(0), 1)
+  var placeBetsRatio: Int = int.tryParse(ratio(1), 1)
 
   /* Users */
   val concurrentUsers: Int = int.tryParse(System.getProperty("concurrentUsers"), 1) // -DconcurrentUsers
 
   /* Simulation Duration */
   val durationStr: String = System.getProperty("duration") // -Dduration
-  val durationInt: Int = int.tryParse(durationStr, 1)
-  val overallDuration: FiniteDuration = Duration.apply(durationStr + " minutes").asInstanceOf[FiniteDuration]
+  val overallDuration: FiniteDuration = Duration.apply(durationStr).asInstanceOf[FiniteDuration]
   val rampPeriod: FiniteDuration = simulationDuration.getRampPeriod(overallDuration, rampRatio).asInstanceOf[FiniteDuration]
   val simulationPeriod: FiniteDuration = overallDuration - rampPeriod
 
@@ -91,21 +87,21 @@ class PerformanceTest extends Simulation {
   var scn: ScenarioBuilder = scenario("default")
 
   scenarioMode match {
-    case 1 => scn = scenario("CalculateBets")
+    case "Calculate bets" => scn = scenario("CalculateBets")
       .exec(
         feed(requestHeadersFeeder)
           .repeat(calculateBetsRatio) {
             CalculateBets.calculateBets
           })
 
-    case 2 => scn = scenario("PlaceBets")
+    case "Place bets" => scn = scenario("PlaceBets")
       .exec(
         feed(requestHeadersFeeder)
           .repeat(placeBetsRatio) {
             PlaceBets.placeBets
           })
 
-    case 0 | _ => scn = scenario("CalculateAndPlaceBets")
+    case "Calculate and place bets" | _ => scn = scenario("CalculateAndPlaceBets")
       .exec(feed(requestHeadersFeeder)
         .repeat(calculateBetsRatio) {
           CalculateBets.calculateBets
