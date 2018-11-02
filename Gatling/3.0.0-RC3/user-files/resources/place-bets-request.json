@@ -3,9 +3,9 @@
     "locale": 1235,
     "selections": [
         {
-            "id": "0ML30409118_1",
-            "trueodds" : 1.21,
-            "displayOdds": "1.21"
+            "id": "0ML31191091_1",
+            "trueodds" : 3.7,
+            "displayOdds": "3.7"
         }
     ],
     "bets": [
@@ -13,13 +13,13 @@
             "type": "Single",
             "selectionsMapped": [
                 {
-                    "id": "0ML30409118_1"
+                    "id": "0ML31191091_1"
                 }
             ],
             "stake": 1,
-            "trueOdds": 1.21,
-            "displayOdds": "1.21",
-            "potentialReturns": 1.21
+            "trueOdds": 3.7,
+            "displayOdds": "3.7",
+            "potentialReturns": 3.7
            
         }
     ]
