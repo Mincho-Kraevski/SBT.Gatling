@@ -1,0 +1,33 @@
+{
+    "oddstyle": "decimal",
+    "locale": 1235,
+    "selections": [
+         {
+            "id": "0ML31191091_1",
+            "trueodds" : 3.7,
+            "displayOdds": "3.7"
+        },
+        {
+            "id": "0ML31191093_1",
+            "trueodds" : 2.65,
+            "displayOdds": "2.65"
+        }
+    ],
+    "bets": [
+        {
+            "type": "Combo",
+            "selectionsMapped": [
+                {
+                    "id": "0ML31191091_1"
+                },
+                {
+                    "id": "0ML31191093_1"
+                }
+            ],
+            "stake": 1,
+            "trueOdds": 9.8,
+            "displayOdds": "9.8",
+            "potentialReturns": 9.8
+        }
+    ]
+}

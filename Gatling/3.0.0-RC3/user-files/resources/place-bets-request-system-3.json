@@ -1,0 +1,41 @@
+{
+    "oddstyle": "decimal",
+    "locale": 1235,
+    "selections": [
+         {
+            "id": "0ML31191091_1",
+            "trueodds" : 3.7,
+            "displayOdds": "3.7"
+        },
+        {
+            "id": "0ML31191093_1",
+            "trueodds" : 2.65,
+            "displayOdds": "2.65"
+        },
+        {
+            "id": "0ML31211308_1",
+            "trueodds" : 1.79,
+            "displayOdds": "1.79"
+        }
+    ],
+    "bets": [
+        {
+            "type": "Trixie",
+            "selectionsMapped": [
+                {
+                    "id": "0ML31191091_1"
+                },
+                {
+                    "id": "0ML31191093_1"
+                },
+                {
+                    "id": "0ML31211308_1"
+                }
+            ],
+            "stake": 1,
+            "trueOdds": 38.67,
+            "displayOdds": "38.67",
+            "potentialReturns": 38.67
+        }
+    ]
+}

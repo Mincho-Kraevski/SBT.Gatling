@@ -1,0 +1,178 @@
+{
+    "oddstyle": "decimal",
+    "locale": 1235,
+    "selections": [
+        {
+            "id": "0ML31191091_3",
+            "trueOdds": 2,
+            "displayOdds": "2"
+        },
+        {
+            "id": "0ML31191093_1",
+            "trueOdds": 2.65,
+            "displayOdds": "2.65"
+        },
+        {
+            "id": "0ML31211308_1",
+            "trueOdds": 1.79,
+            "displayOdds": "1.79"
+        },
+        {
+            "id": "0ML31347281_1",
+            "trueOdds": 1.43,
+            "displayOdds": "1.43"
+        },
+        {
+            "id": "0ML31347284_1",
+            "trueOdds": 1.99,
+            "displayOdds": "1.99"
+        },
+        {
+            "id": "0ML31526565_1",
+            "trueOdds": 1.48,
+            "displayOdds": "1.48"
+        },
+        {
+            "id": "0ML31526564_3",
+            "trueOdds": 2,
+            "displayOdds": "2"
+        },
+        {
+            "id": "0ML31526563_1",
+            "trueOdds": 1.58,
+            "displayOdds": "1.58"
+        },
+        {
+            "id": "0ML31526561_3",
+            "trueOdds": 1.63,
+            "displayOdds": "1.63"
+        },
+        {
+            "id": "0ML31203252_3",
+            "trueOdds": 1.3,
+            "displayOdds": "1.3"
+        },
+        {
+            "id": "0ML31526560_1",
+            "trueOdds": 1.96,
+            "displayOdds": "1.96"
+        },
+        {
+            "id": "0ML31187774_3",
+            "trueOdds": 1.75,
+            "displayOdds": "1.75"
+        },
+        {
+            "id": "0ML31203251_1",
+            "trueOdds": 1.2,
+            "displayOdds": "1.2"
+        },
+        {
+            "id": "0ML31187773_1",
+            "trueOdds": 1.48,
+            "displayOdds": "1.48"
+        },
+        {
+            "id": "0ML31252171_1",
+            "trueOdds": 1.16,
+            "displayOdds": "1.16"
+        },
+        {
+            "id": "0ML31192059_1",
+            "trueOdds": 2.6,
+            "displayOdds": "2.6"
+        },
+        {
+            "id": "0ML31191103_1",
+            "trueOdds": 1.37,
+            "displayOdds": "1.37"
+        },
+        {
+            "id": "0ML31191102_1",
+            "trueOdds": 1.21,
+            "displayOdds": "1.21"
+        },
+        {
+            "id": "0ML31187768_1",
+            "trueOdds": 2.05,
+            "displayOdds": "2.05"
+        },
+        {
+            "id": "0ML31191104_1",
+            "trueOdds": 1.34,
+            "displayOdds": "1.34"
+        }
+    ],
+    "bets": [
+        {
+            "type": "System19from20",
+            "selectionsMapped": [
+                {
+                    "id": "0ML31191091_3"
+                },
+                {
+                    "id": "0ML31191093_1"
+                },
+                {
+                    "id": "0ML31211308_1"
+                },
+                {
+                    "id": "0ML31347281_1"
+                },
+                {
+                    "id": "0ML31347284_1"
+                },
+                {
+                    "id": "0ML31526565_1"
+                },
+                {
+                    "id": "0ML31526564_3"
+                },
+                {
+                    "id": "0ML31526563_1"
+                },
+                {
+                    "id": "0ML31526561_3"
+                },
+                {
+                    "id": "0ML31203252_3"
+                },
+                {
+                    "id": "0ML31526560_1"
+                },
+                {
+                    "id": "0ML31187774_3"
+                },
+                {
+                    "id": "0ML31203251_1"
+                },
+                {
+                    "id": "0ML31187773_1"
+                },
+                {
+                    "id": "0ML31252171_1"
+                },
+                {
+                    "id": "0ML31192059_1"
+                },
+                {
+                    "id": "0ML31191103_1"
+                },
+                {
+                    "id": "0ML31191102_1"
+                },
+                {
+                    "id": "0ML31187768_1"
+                },
+                {
+                    "id": "0ML31191104_1"
+                }
+            ],
+            "stake": 1,
+            "trueOdds": 278331.23,
+            "displayOdds": "278331.23",
+            "potentialReturns": 278331.23
+           
+        }
+    ]
+}

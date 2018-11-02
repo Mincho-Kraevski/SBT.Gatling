@@ -1,0 +1,73 @@
+{
+    "oddstyle": "decimal",
+    "locale": 1235,
+    "selections": [
+         {
+            "id": "0ML31191091_1",
+            "trueodds" : 3.7,
+            "displayOdds": "3.7"
+        },
+        {
+            "id": "0ML31191093_1",
+            "trueodds" : 2.65,
+            "displayOdds": "2.65"
+        },
+        {
+            "id": "0ML31211308_1",
+            "trueodds" : 1.79,
+            "displayOdds": "1.79"
+        },
+        {
+            "id": "0ML31347281_1",
+            "trueodds" : 1.43,
+            "displayOdds": "1.43"
+        },
+        {
+            "id": "0ML31347284_1",
+            "trueodds" : 1.99,
+            "displayOdds": "1.99"
+        },
+        {
+            "id": "0ML31526565_1",
+            "trueodds" : 1.48,
+            "displayOdds": "1.48"
+        },
+        {
+            "id": "0ML31526564_1",
+            "trueodds" : 3.3,
+            "displayOdds": "3.3"
+        }
+    ],
+    "bets": [
+        {
+            "type": "SuperHeinz",
+            "selectionsMapped": [
+                {
+                    "id": "0ML31191091_1"
+                },
+                {
+                    "id": "0ML31191093_1"
+                },
+                {
+                    "id": "0ML31211308_1"
+                },
+                {
+                    "id": "0ML31347281_1"
+                },
+                {
+                    "id": "0ML31347284_1"
+                },
+                {
+                    "id": "0ML31526565_1"
+                },
+                {
+                    "id": "0ML31526564_1"
+                }
+            ],
+            "stake": 1,
+            "trueOdds": 3685.58,
+            "displayOdds": "3685.58",
+            "potentialReturns": 3685.58
+        }
+    ]
+}
