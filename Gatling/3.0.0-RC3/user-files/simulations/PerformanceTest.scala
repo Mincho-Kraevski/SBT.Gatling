@@ -5,6 +5,9 @@ import io.gatling.core.structure.{ChainBuilder, ScenarioBuilder}
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
 
+import scala.concurrent.duration._
+import scala.util.Try
+
 /* CALCULATE BET */
 object CalculateBets {
   val resourceUrl = "/betslip/calculateBets"
@@ -21,9 +24,6 @@ object CalculateBets {
     case "Cast" => fileToExecute = "calculate-bets-request-cast.json"
   }
 
-  Console.printf("Calculate bet type: %d", typeOfRequest)
-  Console.printf("Calculate bet file to execute: %d", fileToExecute)
-
   val calculateBets: ChainBuilder = exec(http("Calculate Bets")
     .post(resourceUrl)
     .body(RawFileBody(fileToExecute))
@@ -31,7 +31,8 @@ object CalculateBets {
       "CLAIM-PlayerId" -> "${PlayerId}",
       "CLAIM-SiteId" -> "${SiteId}",
       "CLAIM-exp" -> "${Expiration}"))
-  ).pause(1)
+  )
+    .pause(1)
 }
 
 /* PLACE BETS */
@@ -50,17 +51,14 @@ object PlaceBets {
     case "Cast" => fileToExecute = "place-bets-request-cast.json"
   }
 
-  Console.printf("Place bet type: %d", typeOfRequest)
-  Console.printf("Place bet file to execute: %d", fileToExecute)
-
   val placeBets: ChainBuilder = exec(http("Place Bets")
     .post(resourceUrl)
     .body(RawFileBody(fileToExecute))
     .headers(Map(
       "CLAIM-PlayerId" -> "${PlayerId}",
       "CLAIM-SiteId" -> "${SiteId}",
-      "CLAIM-exp" -> "${Expiration}"))
-  ).pause(1)
+      "CLAIM-exp" -> "${Expiration}")))
+    .pause(1)
 }
 
 /* TEST APP */
