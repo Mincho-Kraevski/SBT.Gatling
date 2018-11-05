@@ -25,7 +25,7 @@ object CalculateBets {
     case "Cast" => fileToExecute = "calculate-bets-request-cast.json"
   }
 
-  val calculateBets: ChainBuilder = exec(http(s"Calculate Bets {typeOfRequest}")
+  val calculateBets: ChainBuilder = exec(http(s"Calculate Bets ${typeOfRequest}")
     .post(resourceUrl)
     .body(RawFileBody(fileToExecute))
     .headers(Map(
@@ -51,7 +51,7 @@ object PlaceBets {
     case "Cast" => fileToExecute = "place-bets-request-cast.json"
   }
 
-  val placeBets: ChainBuilder = exec(http(s"Place Bets {typeOfRequest}")
+  val placeBets: ChainBuilder = exec(http(s"Place Bets ${typeOfRequest}")
     .post(resourceUrl)
     .body(RawFileBody(fileToExecute))
     .headers(Map(
