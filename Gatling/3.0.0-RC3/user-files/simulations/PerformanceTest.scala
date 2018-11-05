@@ -26,7 +26,7 @@ object CalculateBets {
 
   val calculateBets: ChainBuilder = exec(http("Calculate Bets")
     .post(resourceUrl)
-    .body(RawFileBody(fileToExecute))
+    .body(RawFileBody(s"${fileToExecute}"))
     .headers(Map(
       "CLAIM-PlayerId" -> "${PlayerId}",
       "CLAIM-SiteId" -> "${SiteId}",
@@ -53,7 +53,7 @@ object PlaceBets {
 
   val placeBets: ChainBuilder = exec(http("Place Bets")
     .post(resourceUrl)
-    .body(RawFileBody(fileToExecute))
+    .body(RawFileBody(s"${fileToExecute}"))
     .headers(Map(
       "CLAIM-PlayerId" -> "${PlayerId}",
       "CLAIM-SiteId" -> "${SiteId}",
