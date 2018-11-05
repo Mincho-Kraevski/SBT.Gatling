@@ -1,12 +1,5 @@
+import PlaceBets.typeOfRequest
 import com.typesafe.config._
-import io.gatling.core.Predef._
-import io.gatling.core.feeder.SourceFeederBuilder
-import io.gatling.core.structure.{ChainBuilder, ScenarioBuilder}
-import io.gatling.http.Predef._
-import io.gatling.http.protocol.HttpProtocolBuilder
-
-import scala.concurrent.duration._
-import scala.util.Try
 
 /* CALCULATE BET */
 object CalculateBets {
@@ -24,6 +17,8 @@ object CalculateBets {
     case "System20" => fileToExecute = "calculate-bets-request-system-20.json"
     case "Cast" => fileToExecute = "calculate-bets-request-cast.json"
   }
+
+  printf("Calculate bet type: %d", typeOfRequest)
 
   val calculateBets: ChainBuilder = exec(http(s"Calculate Bets ${typeOfRequest}")
     .post(resourceUrl)
@@ -50,6 +45,8 @@ object PlaceBets {
     case "System20" => fileToExecute = "place-bets-request-system-20.json"
     case "Cast" => fileToExecute = "place-bets-request-cast.json"
   }
+
+  printf("Place bet type: %d", typeOfRequest)
 
   val placeBets: ChainBuilder = exec(http(s"Place Bets ${typeOfRequest}")
     .post(resourceUrl)
