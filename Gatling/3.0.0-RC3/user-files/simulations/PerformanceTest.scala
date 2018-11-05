@@ -1,6 +1,9 @@
-import CalculateBets.fileToExecute
-import PlaceBets.typeOfRequest
 import com.typesafe.config._
+import io.gatling.core.Predef._
+import io.gatling.core.feeder.SourceFeederBuilder
+import io.gatling.core.structure.{ChainBuilder, ScenarioBuilder}
+import io.gatling.http.Predef._
+import io.gatling.http.protocol.HttpProtocolBuilder
 
 /* CALCULATE BET */
 object CalculateBets {
