@@ -8,7 +8,6 @@ object CalculateBets {
   var fileToExecute: String = "none"
 
   typeOfRequest match {
-    )
     case "Single" => fileToExecute = "calculate-bets-request.json"
     case "Combo" => fileToExecute = "calculate-bets-request-combo.json"
     case "System3" => fileToExecute = "calculate-bets-request-system-3.json"
