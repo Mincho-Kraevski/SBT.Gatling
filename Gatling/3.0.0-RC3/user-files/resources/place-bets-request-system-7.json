@@ -40,7 +40,7 @@
     ],
     "bets": [
         {
-            "type": "SuperHeinz",
+            "type": "single",
             "selectionsMapped": [
                 {
                     "id": "0ML31191091_1"
