@@ -14,8 +14,10 @@ object CalculateBets {
 
   val typeOfRequest: String = System.getProperty("bettype") // -Dbettype
 
+  var calculateBets: ChainBuilder = exec("default")
+
   typeOfRequest match {
-    case "Single" => val calculateBets: ChainBuilder = exec(http("Calculate Bets")
+    case "Single" => calculateBets: ChainBuilder = exec(http("Calculate Bets")
       .post(resourceUrl)
       .body(RawFileBody("calculate-bets-request.json"))
       .headers(Map(
@@ -25,7 +27,7 @@ object CalculateBets {
     )
       .pause(1)
 
-    case "Combo" => val calculateBets: ChainBuilder = exec(http("Calculate Bets")
+    case "Combo" => calculateBets: ChainBuilder = exec(http("Calculate Bets")
       .post(resourceUrl)
       .body(RawFileBody("calculate-bets-request-combo.json"))
       .headers(Map(
@@ -35,7 +37,7 @@ object CalculateBets {
     )
       .pause(1)
 
-    case "System3" => val calculateBets: ChainBuilder = exec(http("Calculate Bets")
+    case "System3" => calculateBets: ChainBuilder = exec(http("Calculate Bets")
       .post(resourceUrl)
       .body(RawFileBody("calculate-bets-request-system-3.json"))
       .headers(Map(
@@ -45,7 +47,7 @@ object CalculateBets {
     )
       .pause(1)
 
-    case "System7" => val calculateBets: ChainBuilder = exec(http("Calculate Bets")
+    case "System7" => calculateBets: ChainBuilder = exec(http("Calculate Bets")
       .post(resourceUrl)
       .body(RawFileBody("calculate-bets-request-system-7.json"))
       .headers(Map(
@@ -55,7 +57,7 @@ object CalculateBets {
     )
       .pause(1)
 
-    case "System14" => val calculateBets: ChainBuilder = exec(http("Calculate Bets")
+    case "System14" => calculateBets: ChainBuilder = exec(http("Calculate Bets")
       .post(resourceUrl)
       .body(RawFileBody("calculate-bets-request-system-14.json"))
       .headers(Map(
@@ -65,7 +67,7 @@ object CalculateBets {
     )
       .pause(1)
 
-    case "System20" => val calculateBets: ChainBuilder = exec(http("Calculate Bets")
+    case "System20" => calculateBets: ChainBuilder = exec(http("Calculate Bets")
       .post(resourceUrl)
       .body(RawFileBody("calculate-bets-request-system-20.json"))
       .headers(Map(
@@ -75,7 +77,7 @@ object CalculateBets {
     )
       .pause(1)
 
-    case "Cast" => val calculateBets: ChainBuilder = exec(http("Calculate Bets")
+    case "Cast" => calculateBets: ChainBuilder = exec(http("Calculate Bets")
       .post(resourceUrl)
       .body(RawFileBody("calculate-bets-request-cast.json"))
       .headers(Map(
@@ -93,8 +95,10 @@ object PlaceBets {
 
   val typeOfRequest: String = System.getProperty("bettype") // -Dbettype
 
+  var placeBets: ChainBuilder = exec("default")
+
   typeOfRequest match {
-    case "Single" => val placeBets: ChainBuilder = exec(http("Place Bets")
+    case "Single" => placeBets: ChainBuilder = exec(http("Place Bets")
       .post(resourceUrl)
       .body(RawFileBody("place-bets-request.json"))
       .headers(Map(
@@ -103,7 +107,7 @@ object PlaceBets {
         "CLAIM-exp" -> "${Expiration}")))
       .pause(1)
 
-    case "Combo" => val placeBets: ChainBuilder = exec(http("Place Bets")
+    case "Combo" => placeBets: ChainBuilder = exec(http("Place Bets")
       .post(resourceUrl)
       .body(RawFileBody("place-bets-request-combo.json"))
       .headers(Map(
@@ -112,7 +116,7 @@ object PlaceBets {
         "CLAIM-exp" -> "${Expiration}")))
       .pause(1)
 
-    case "System3" => val placeBets: ChainBuilder = exec(http("Place Bets")
+    case "System3" => placeBets: ChainBuilder = exec(http("Place Bets")
       .post(resourceUrl)
       .body(RawFileBody("place-bets-request-system-3.json"))
       .headers(Map(
@@ -121,7 +125,7 @@ object PlaceBets {
         "CLAIM-exp" -> "${Expiration}")))
       .pause(1)
 
-    case "System7" => val placeBets: ChainBuilder = exec(http("Place Bets")
+    case "System7" => placeBets: ChainBuilder = exec(http("Place Bets")
       .post(resourceUrl)
       .body(RawFileBody("place-bets-request-system-7.json"))
       .headers(Map(
@@ -130,7 +134,7 @@ object PlaceBets {
         "CLAIM-exp" -> "${Expiration}")))
       .pause(1)
 
-    case "System14" => val placeBets: ChainBuilder = exec(http("Place Bets")
+    case "System14" => placeBets: ChainBuilder = exec(http("Place Bets")
       .post(resourceUrl)
       .body(RawFileBody("place-bets-request-system-14.json"))
       .headers(Map(
@@ -139,7 +143,7 @@ object PlaceBets {
         "CLAIM-exp" -> "${Expiration}")))
       .pause(1)
 
-    case "System20" => val placeBets: ChainBuilder = exec(http("Place Bets")
+    case "System20" => placeBets: ChainBuilder = exec(http("Place Bets")
       .post(resourceUrl)
       .body(RawFileBody("place-bets-request-system-20.json"))
       .headers(Map(
@@ -148,7 +152,7 @@ object PlaceBets {
         "CLAIM-exp" -> "${Expiration}")))
       .pause(1)
 
-    case "Cast" => val placeBets: ChainBuilder = exec(http("Place Bets")
+    case "Cast" => placeBets: ChainBuilder = exec(http("Place Bets")
       .post(resourceUrl)
       .body(RawFileBody("place-bets-request-cast.json"))
       .headers(Map(
