@@ -1,3 +1,4 @@
+import CalculateBets.fileToExecute
 import PlaceBets.typeOfRequest
 import com.typesafe.config._
 
@@ -18,6 +19,7 @@ object CalculateBets {
   }
 
   Console.printf("Calculate bet type: %d", typeOfRequest)
+  Console.printf("Calculate bet file to execute: %d", fileToExecute)
 
   val calculateBets: ChainBuilder = exec(http("Calculate Bets")
     .post(resourceUrl)
@@ -46,6 +48,7 @@ object PlaceBets {
   }
 
   Console.printf("Place bet type: %d", typeOfRequest)
+  Console.printf("Place bet file to execute: %d", fileToExecute)
 
   val placeBets: ChainBuilder = exec(http("Place Bets")
     .post(resourceUrl)
