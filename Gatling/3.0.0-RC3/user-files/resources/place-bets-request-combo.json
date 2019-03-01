@@ -26,6 +26,7 @@
             ],
             "stake": 1,
             "trueOdds": 9.8,
+            "numberOfBets": 1,
             "displayOdds": "9.8",
             "potentialReturns": 9.8
         }
