@@ -18,6 +18,7 @@
             ],
             "stake": 1,
             "trueOdds": 3.7,
+            "numberOfBets": 1,
             "displayOdds": "3.7",
             "potentialReturns": 3.7
            
