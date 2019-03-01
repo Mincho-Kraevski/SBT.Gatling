@@ -29,6 +29,7 @@
                 }],
 		"stake": 1,
 		"trueOdds": 7775,
+		"numberOfBets": 7,
 		"displayOdds": "7775",
 		"potentialReturns": 7775
 	}]
