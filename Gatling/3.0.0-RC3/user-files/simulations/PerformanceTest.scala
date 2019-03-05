@@ -10,7 +10,7 @@ import scala.util.Try
 
 /* CALCULATE BET */
 object CalculateBets {
-  val resourceUrl = "/betslip/calculateBets"
+  val resourceUrl = "/betting/calculateBets"
   val typeOfRequest: String = System.getProperty("bettype") // -Dbettype
   var fileToExecute: String = "none"
 
